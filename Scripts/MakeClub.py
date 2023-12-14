@@ -27,12 +27,3 @@ def create_tennis_club():
     else:
         print("Tennis Club creation canceled.")
         return None
-
-if __name__ == "__main__":
-    created_club = create_tennis_club()
-
-    if created_club:
-        print("\nTennis Club Information:")
-        print(f"Name: {created_club.name}")
-        print(f"Location: {created_club.location}")
-        print(f"Membership Fee: ${created_club.membership_fee:.2f}")

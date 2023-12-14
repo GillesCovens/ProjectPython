@@ -1,5 +1,8 @@
-from Scripts.MakeClub import create_tennis_club
+from Scripts.InterfaceScripts.UserInterface import main_menu
 
 
-club = create_tennis_club()
+def main():
+        menu = main_menu()
 
+if __name__ == "__main__":
+    main()
