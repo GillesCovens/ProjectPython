@@ -9,7 +9,7 @@ Dit project bevat een Tennis Club Management System, ontwikkeld in Python. Het s
 - [Installatie](#installatie)
 - [Gebruik](#gebruik)
 - [Structuur](#structuur)
-- [Structuur](#database)
+- [Database](#database)
 
 ## Installatie
 
@@ -34,9 +34,9 @@ Dit project bevat een Tennis Club Management System, ontwikkeld in Python. Het s
     python main.py
     ```
 
-4. **Database**
-    De database die je gedownload hebt vanop toledo plaats je in het mapje database.
-    Hier zal je ook 2 files zien staan met de naam database operations deze bestanden handelen alle functionaliteiten af die met de database te maken hebben.
+5. **Database:**
+    Download de database vanuit Toledo en plaats het in het mapje `database`. De bestanden met de naam `database_operations` in de map bevatten alle functionaliteiten die met de database te maken hebben.
+
 ## Gebruik
 
 Volg de instructies tijdens het uitvoeren van het programma om tennisclubs te beheren en deel te nemen aan toernooien.
@@ -47,4 +47,3 @@ Volg de instructies tijdens het uitvoeren van het programma om tennisclubs te be
 - `database/`: Bevat de implementatie van database-operaties.
 - `Scripts/`: Bevat verschillende scripts voor het beheer van de Tennis Club en toernooien.
 - `main.py`: Hoofdprogramma om het Tennis Club Management System uit te voeren.
-
