@@ -34,7 +34,7 @@ Dit project bevat een Tennis Club Management System, ontwikkeld in Python. Het s
     python main.py
     ```
 
-5. **Database:**
+ ## Database:
     Download de database vanuit Toledo en plaats het in het mapje `database`. De bestanden met de naam `database_operations` in de map bevatten alle functionaliteiten die met de database te maken hebben.
 
 ## Gebruik
