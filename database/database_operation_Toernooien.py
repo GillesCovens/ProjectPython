@@ -1,10 +1,9 @@
 import sqlite3
 
 class ToernooienDatabaseOperations:
-    def __init__(self):
-        self.connection = sqlite3.connect('database/DatabaseTC.db')
+    def __init__(self, db_path='database/DatabaseTC.db'):
+        self.connection = sqlite3.connect(db_path)
         self.cursor = self.connection.cursor()
-        self.connection.commit()
 
     def add_toernooi(self, naam, club):
         insert_query = '''
@@ -39,18 +38,14 @@ class ToernooienDatabaseOperations:
     def delete_toernooi(self, identifier):
         delete_query = '''
         DELETE FROM "Toernooien" WHERE "id" = ?;
-         '''
+        '''
         try:
-            # Omzetten naar integer indien nodig
             toernooi_id = int(identifier)
-
-            # Voer de query uit
             self.cursor.execute(delete_query, (toernooi_id,))
             self.connection.commit()
             print("Toernooi verwijderd.")
         except (ValueError, sqlite3.Error):
             print("Fout: Toernooi niet gevonden of kan niet worden verwijderd.")
-
 
     def close_connection(self):
         self.connection.close()

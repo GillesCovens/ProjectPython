@@ -1,4 +1,5 @@
 from database.database_operation_Toernooien import ToernooienDatabaseOperations
+
 def run_toernooien_interface():
     toernooien_db = ToernooienDatabaseOperations()
 
@@ -25,7 +26,6 @@ def run_toernooien_interface():
         else:
             print("Ongeldige keuze. Probeer opnieuw.")
 
-    # Sluit de databaseverbinding wanneer het programma eindigt
     toernooien_db.close_connection()
 
 def voeg_toernooi_toe(db):
@@ -33,22 +33,15 @@ def voeg_toernooi_toe(db):
     naam = input("Naam: ")
     club = input("Club: ")
 
-    # Roep de methode aan om een toernooi toe te voegen
     db.add_toernooi(naam, club)
 
 def bekijk_toernooi_details(db):
     print("\nBekijk toernooi details:")
     toernooi_id = input("Voer het toernooi ID in: ")
 
-    # Roep de methode aan om details van een bepaald toernooi op te halen
     toernooi_details = db.get_all_toernooien()
     
-    # Zoek naar het toernooi met het opgegeven ID
-    gevonden_toernooi = None
-    for toernooi in toernooi_details:
-        if toernooi[0] == int(toernooi_id):
-            gevonden_toernooi = toernooi
-            break
+    gevonden_toernooi = next((toernooi for toernooi in toernooi_details if toernooi[0] == int(toernooi_id)), None)
 
     if gevonden_toernooi:
         print(f"\nDetails van Toernooi {toernooi_id}:")
@@ -72,4 +65,3 @@ def bekijk_alle_toernooien(db):
             print(f"Toernooi ID: {toernooi[0]}, Naam: {toernooi[1]}, Club: {toernooi[2]}")
     else:
         print("Geen toernooien gevonden.")
-

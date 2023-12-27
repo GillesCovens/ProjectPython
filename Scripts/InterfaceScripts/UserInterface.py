@@ -2,7 +2,8 @@ from Scripts.MakeClub import create_tennis_club
 from database.database_operations_Leden import DatabaseOperations
 from Scripts.PrintScripts.PrintToCSV import export_all_members_to_csv
 from Scripts.PrintScripts.PrintToExcel import export_all_members_to_excel
-from Scripts.InterfaceScripts.UserinterfaceToernooi import run_toernooien_interface 
+from Scripts.InterfaceScripts.UserinterfaceToernooi import run_toernooien_interface
+
 def main_menu():
     db_operations = DatabaseOperations("database/DatabaseTC.db")
     created_club = None
@@ -24,7 +25,7 @@ def main_menu():
             print("7. View Club Details")
             print("8. Toernooi Menu")
             print("9. Exit") 
-            choice = input("Enter your choice ( 2, 3, 4, 5, 6, 7, 8, or 9): ")
+            choice = input("Enter your choice (2, 3, 4, 5, 6, 7, 8, or 9): ")
 
         if choice == "1" and created_club is None:
             created_club = create_tennis_club()
@@ -67,6 +68,3 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please enter a valid option.")
-
-if __name__ == "__main__":
-    main_menu()

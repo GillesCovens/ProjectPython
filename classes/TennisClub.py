@@ -13,22 +13,16 @@ class TennisClub:
     def set_membership_fee(self, membership_fee):
         self._membership_fee = membership_fee
 
-    def set_name(self, name):
-        answer = input("Are you sure you want to change the name of the club? (y/n)")
-        if answer == "y":
-            self.name = name
-        else:
-            print("The name of the club is not changed.")
-
     def get_location(self):
         return self.location
 
-    def get_details(self):
-        return f"Club Details:\nName: {self.name}\nLocation: {self.location}\nMembership Fee: ${self._membership_fee:.2f}"
-
     def set_name(self, name):
-        answer = input("Are you sure you want to change the name of the club? (y/n)")
-        if answer == "y":
+        answer = input("Are you sure you want to change the name of the club? (y/n) ")
+        if answer.lower() == "y":
             self.name = name
+            print("The name of the club has been changed.")
         else:
             print("The name of the club is not changed.")
+
+    def get_details(self):
+        return f"Club Details:\nName: {self.name}\nLocation: {self.location}\nMembership Fee: ${self._membership_fee:.2f}"

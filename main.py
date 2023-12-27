@@ -1,6 +1,4 @@
 from Scripts.InterfaceScripts.UserInterface import main_menu
-
-
 def main():
         menu = main_menu()
 
