@@ -13,9 +13,9 @@ class ToernooienDatabaseOperations:
         try:
             self.cursor.execute(insert_query, (naam, club))
             self.connection.commit()
-            print("Toernooi toegevoegd.")
+            print("Toernooi added.")
         except sqlite3.Error:
-            print("Error: Kan het toernooi niet toevoegen.")
+            print("Error: Unable to add the tournament.")
 
     def get_all_toernooien(self):
         select_all_query = '''
@@ -29,11 +29,11 @@ class ToernooienDatabaseOperations:
         toernooien = self.get_all_toernooien()
 
         if not toernooien:
-            print("Geen toernooien gevonden.")
+            print("No tournaments found.")
         else:
-            print("Alle toernooien:")
+            print("All toernooien:")
             for toernooi in toernooien:
-                print(f"ID: {toernooi[0]}, Naam: {toernooi[1]}, Club: {toernooi[2]}")
+                print(f"ID: {toernooi[0]}, Name: {toernooi[1]}, Club: {toernooi[2]}")
 
     def delete_toernooi(self, identifier):
         delete_query = '''
@@ -43,9 +43,9 @@ class ToernooienDatabaseOperations:
             toernooi_id = int(identifier)
             self.cursor.execute(delete_query, (toernooi_id,))
             self.connection.commit()
-            print("Toernooi verwijderd.")
+            print("Toernooi removed.")
         except (ValueError, sqlite3.Error):
-            print("Fout: Toernooi niet gevonden of kan niet worden verwijderd.")
+            print("Error: Tournament not found or cannot be deleted.")
 
     def close_connection(self):
         self.connection.close()
